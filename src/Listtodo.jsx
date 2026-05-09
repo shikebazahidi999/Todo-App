@@ -1,13 +1,16 @@
 import { CheckCircle, Trash } from "lucide-react";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { todoContext } from "./App";
 
 export default function Listtodo({todo,list,setlist}){
+   const allinfo = useContext(todoContext)
 
     function checkbtn(id){
-        setlist((prev)=> prev.map((cheked)=> cheked.id==id ? {...cheked, haveDone: !cheked.haveDone}:cheked))
+        setlist((prev)=>
+             prev.map((cheked)=> (cheked.id==id ? { ...cheked, haveDone: !cheked.haveDone}:cheked)))
     }
     function trash(id){
-        setlist((lastvalue)=>list.filter((items)=>items.id!==id))
+        setlist((lastvalue)=>lastvalue.filter((items)=>items.id!=id))
     }
    
     return(
