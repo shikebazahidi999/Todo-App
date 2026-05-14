@@ -1,23 +1,25 @@
 // import { createContext, useContext, useState } from "react";
 
+import Mainpage from "./messege work/mainpage";
+
 // import {  Routes,Route } from "react-router-dom";
 // import Alltodo from "./Todo";
 // import Done from "./done";
 // import Form from "./form";
-import { createContext, useReducer } from "react";
-import Addinfo from "./addinfo";
-import Allinfo from "./Allinfo";
+// import { createContext, useReducer } from "react";
+// import Addinfo from "./addinfo";
+// import Allinfo from "./Allinfo";
 
 
 // export const todoContext = createContext()
-export const usecontextforallinfo= createContext()
+// export const usecontextforallinfo= createContext()
 export default function App(){
 //   const [value,setvalue] = useState(false);
 //   const [list,setlist]= useState([]);
-function functio(value,setvalue){
-  return(
-    value = setvalue.payload
-  )
+// function functio(value,setvalue){
+//   return(
+//     value = setvalue.payload
+//   )
   
     // if(setvalue.type==="Shikeba"){
     //   return(
@@ -29,18 +31,23 @@ function functio(value,setvalue){
     //   )
     // }
   
-}
-const [value,setvalue] = useReducer(functio,"")
+// }
+// const [value,setvalue] = useReducer(functio,"")
    
  
 //  console.log(list)
   return(
     <>
-<usecontextforallinfo.Provider value={{value:value,setvalue:setvalue}}>
-  <Allinfo/>
-</usecontextforallinfo.Provider>
+    <div className=" w-full h-full bg-stone-200">
+
+    <Mainpage/>
+    </div>
+
     
     </>
+// {/* <usecontextforallinfo.Provider value={{value:value,setvalue:setvalue}}>
+//   <Allinfo/>
+// </usecontextforallinfo.Provider> */}
   //   <todoContext.Provider value={{value:value,
   //   setvalue:setvalue, 
   //   list: list,
