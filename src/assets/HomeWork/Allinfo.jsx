@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { informations } from "./assets/HomeWork/AllDetails"
 import { usecontextforallinfo } from "./App";
-import { Type } from "lucide-react";
+import { Trash, Type } from "lucide-react";
 export default function Allinfo(){
     const information = informations;
     const useContextforc = useContext(usecontextforallinfo)
@@ -22,6 +22,7 @@ export default function Allinfo(){
                     <h1 className="cursive text-2xl font-bold text-lime-500  shadow-2xl shadow-lime-900" >Comments:</h1>
                     <h1 className="h-fit  border-2 border-lime-500 p-4 w-full">{useContextforc.value} </h1>
                     <input onChange={(event)=>useContextforc.setvalue({type:information.type,payload: event.target.value})} className="border-2 border-lime-500 focus:outline-lime-600  w-full focus:border-none my-2" type="text" placeholder="leave a Comment"/>
+                  
 
                 </div>
             ))
