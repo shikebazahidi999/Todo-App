@@ -9,6 +9,7 @@ export default function Shomessege(){
    let [inputvalue,setinputvalue] = useState("")
    let uderef = useRef(null);
    function addwork(){
+
     setvalue((ex)=> [...ex , inputvalue ])
     setinputvalue("")
     uderef.current.focus()}
@@ -52,14 +53,14 @@ export default function Shomessege(){
           <div className="flex flex-col items-end ">
              <h1 className="h-fit w-fit py-2 px-4 bg-green-200 rounded-2xl text-stone-500">you<h1 className="text-black">hello dear freind i hope you hav starded a greate dat<h1 className="text-[10px] text-right text-stone-500">{date}<CheckCheckIcon/></h1></h1></h1>
           </div>
-          <div className="flex flex-col items-end gap-2">
+          <div className="flex flex-col items-end gap-2 py-7">
           {value.map((items,index)=>(
-                    <h1 key={index} className="h-fit w-fit py-2 px-4 bg-green-200 rounded-2xl text-stone-500">you <h1>{items}<h1 className="text-[10px] text-right text-stone-500">{date}<CheckCheckIcon/></h1></h1></h1>
+                    <h1 key={index} className="h-fit w-fit py-2 px-4 bg-green-200 rounded-2xl text-stone-500">you <h1 className="text-black">{items}<h1 className="text-[10px] text-right text-stone-500">{date}<CheckCheckIcon/></h1></h1></h1>
                 ))}
 </div>
     </div>
     <div className="fixed bottom-0 right-0 w-257 bg-white h-fit p-4 rounded-3xl flex gap-2 ">
-        <input className="h-fit w-full focus:outline-stone-200 p-3  rounded-3xl" type="text" placeholder="Send New messege" />
+        <input value={inputvalue} onChange={(events)=>setinputvalue(events.target.value)} className="h-fit w-full focus:outline-stone-200 p-3  rounded-3xl" type="text" placeholder="Send New messege" />
         <button onClick={addwork} className="bg-green-600 h-fit w-fit p-3 rounded-full text-gray-100 hover:bg-green-500"><Send/></button>
     </div>
         </div> 
